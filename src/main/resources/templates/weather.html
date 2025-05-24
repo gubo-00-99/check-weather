@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 입지? - 날씨 체크</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Vh_4C_YVbiukeHUiRRvp-Qx7AiVllWk&libraries=places&language=ko"
+        defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather & Clothing Recommendations</h1>
+        <img id="weatherImg" th:src="@{/img/weather-icon.png}" alt="Weather Icon" width="300px">
+        <!-- <img src="../static/img/weather-icon.png" alt="Weather Icon" width="300px"> -->
+        <!--   겁색할 도시 입력  -->
+        <form id="weatherForm" novalidate>
+            <input id="cityInput" name="city" placeholder="도시 이름을 입력해주세요" autocomplete="off" spellcheck="false"
+                type="search">
+            <button type="submit">검색</button>
+        </form>
+        <ul id="autocompleteList"></ul>
+        <!--  자동 완성된 도시 리스트 -->
+        <!--  날짜 정보도 출력하면 좋을 것 같다  -->
+        <!--  날씨 데이터 출력  -->
+        <div class="card" id="weatherInfo">
+            <div id="loadingSpinner" style="display: none;">
+                로딩 중...
+            </div>
+            <div>
+                <h3 id="todayDate"></h3>
+                <h3 id="weatherDescription"></h3>
+                <h3 id="clothingRecommendation"></h3>
+                <h3 id="locationName"></h3>
+            </div>
+            <div>
+                <p id="perceivedTemp"></p>
+                <p id="temperature"></p>
+                <p id="lowestTemp"></p>
+                <p id="highestTemp"></p>
+                <p id="windSpeed"></p>
+                <p id="precipitation"></p>
+            </div>
+        </div>
+        <!--  오류 메시지  -->
+        <div id="errorMessage" style="color: red;"></div>
+
+    </div>
+    <script defer th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

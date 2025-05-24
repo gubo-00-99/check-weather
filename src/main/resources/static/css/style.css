@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #212529;
+    margin: 0;
+    padding: 1rem;
+}
+
+div {
+    padding: 8px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #d6eaf8;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.card {
+    display: none;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+#weatherInfo {
+    text-align: center;
+}
+
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 24px;
+    padding: 16px;
+}
+
+h1 {
+    text-align: center;
+    padding: 8px;
+    color: #333;
+}
+
+h3 {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+#cityInput {
+    margin: 8px;
+    font-size: 16px;
+}
+
+#weatherForm {
+    text-align: center;
+    padding: 8px;
+}
+
+input[type="search"] {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    width: 250px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin: 8px;
+    border: none;
+    background-color: #4a90e2;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.recommendation {
+    background-color: #e8f5e9;
+    border-left: 5px solid #43a047;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#autocomplete-list {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    max-width: 100%;
+}
+
+#autocomplete-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#autocomplete-list li:hover {
+    background: #f0f0f0;
+}
+
+#errorMessage {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .form-group {
+      flex-direction: row;
+      gap: 0.5rem;
+      width: 100%;
+    }
+  
+    #cityInput,
+    input[type="search"] {
+      flex: 3;
+      min-width: 0;
+    }
+  
+    button {
+      flex: 1;
+      min-width: 0;
+    }
+  }
