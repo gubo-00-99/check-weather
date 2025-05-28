@@ -6,9 +6,16 @@
     <title>오늘 뭐 입지? - 날씨 체크</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <script src="config.js"></script> <!-- 가장 먼저 불러와야함 -->
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Vh_4C_YVbiukeHUiRRvp-Qx7AiVllWk&libraries=places&language=ko"
+        src="https://maps.googleapis.com/maps/api/js?key=abcd1234YOURKEY&libraries=places&language=ko"
         defer></script>
+    <script>
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${config.GOOGLE_MAPS_API_KEY}&libraries=places&language=ko`;
+        script.defer = true;
+        document.head.appendChild(script);
+    </script>
 </head>
 
 <body>
